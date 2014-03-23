@@ -53,9 +53,19 @@ if (isset($_GET['nev'])){
 				exit();
 			}
 		}
-		else{echo '<script type="text/javascript">'
+		else{
+			echo '<script type="text/javascript">'
    , 'alert("Hibás felhasználónév vagy jelszó!");'
    , '</script>';
+   echo '<form id=login name="login" method="post" action="'.$_SERVER['PHP_SELF'].'">
+ <label>BEJELENTKEZÉS</label><br /><br /><br />
+ <input type="text" name="user" title="Felhasználónév" placeholder="Felhasználónév"/><br /><br />
+ <input type="password" name="pw" title="Jelszó" placeholder="Jelszó"/><br /><br />
+<input  value="Belépés" name="belepes" id="belepes" class="button green" title="Belépés" type="submit">
+<a href="regisztracio.php" id="regisztracio" class="button red">Regisztráció</a>
+<a href="jelszoemlek.php" id="jelszoemlek">Elfelejtetted a jelszavad?</a>
+			</form>';
+   		exit();
 		}}else{
  		if(!isset($_SESSION["user"]) || !isset($_SESSION["pw"])){
 			echo '<form id=login name="login" method="post" action="'.$_SERVER['PHP_SELF'].'">

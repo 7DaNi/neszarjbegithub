@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <div id="menu">
 
 <ul>
@@ -33,4 +34,3 @@ echo '<div id="teteje">
 </div>';
 }
 ?>
-<br />
