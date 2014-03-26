@@ -1,19 +1,10 @@
-<!DOCTYPE HTML>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="content-language" content="hu" />
-<meta name="description" content="szakdolgozat">
-<title>Szakdolgozat</title>
-<script type="text/javascript" src="swfobject.js"></script>
-<script type="text/javascript" src="banner.js"></script>
-</head>
-<body>
+﻿<?php
+require_once('head.php');
+?>
 <div id="swf_content">
-	<p>Frissítés alatt.</p>
+	<p>Akciós termékek helye. <br />Flashplayer szükséges a megjelenítéshez.</p>
 </div>
 <?php
-session_start();
-require_once('head.php');
 if (isset($_GET['nev'])){
 	$nev = $_GET['nev'];
 	$_SESSION["nev"]=$nev;
@@ -24,7 +15,7 @@ if (isset($_GET['nev'])){
 		$pw = $_POST["pw"];
 		
 		$dbc = mysqli_connect(host,user,pw,db);
-		mysqli_query($dbc,"SET NAME utf8");
+		mysqli_query($dbc,"SET NAMES utf8");
 		$query = "SELECT * FROM userek WHERE user='$user' AND pw='$pw'";
 		$data = mysqli_query($dbc,$query);
 		
@@ -41,7 +32,7 @@ if (isset($_GET['nev'])){
 			$_SESSION["rang"]=$rang;
 			$_SESSION["nev"]=$nev;
 			if(isset( $_SESSION["rang"] ) && $_SESSION["rang"] == 1){
-				header('location: fooldal.php');
+				header('location: index.php');
 				exit();
 			}
 			else if(isset( $_SESSION["rang"] ) && $_SESSION["rang"] == 2){
@@ -54,13 +45,10 @@ if (isset($_GET['nev'])){
 			}
 		}
 		else{
-			echo '<script type="text/javascript">'
-   , 'alert("Hibás felhasználónév vagy jelszó!");'
-   , '</script>';
    echo '<form id=login name="login" method="post" action="'.$_SERVER['PHP_SELF'].'">
  <label>BEJELENTKEZÉS</label><br /><br /><br />
- <input type="text" name="user" title="Felhasználónév" placeholder="Felhasználónév"/><br /><br />
- <input type="password" name="pw" title="Jelszó" placeholder="Jelszó"/><br /><br />
+ <input type="text" name="user" title="Felhasználónév" placeholder="Hibás felhasználónév vagy jelszó!"/><br /><br />
+ <input type="password" name="pw" title="Jelszó"/><br /><br />
 <input  value="Belépés" name="belepes" id="belepes" class="button green" title="Belépés" type="submit">
 <a href="regisztracio.php" id="regisztracio" class="button red">Regisztráció</a>
 <a href="jelszoemlek.php" id="jelszoemlek">Elfelejtetted a jelszavad?</a>
@@ -82,20 +70,13 @@ if (isset($_GET['nev'])){
 			echo '<form id=adat name="adat" method="post" action="'.$_SERVER['PHP_SELF'].'">
  <label>ADATAIM</label><br /><br /><br />
  <label>Üdvözöljük</label><br /><br />
- <label>' . utf8_encode($_SESSION["nev"]) . '</label><br /><br />
+ <label>' . $_SESSION["nev"] . '</label><br /><br />
 <a href="adatmodositas.php" id="adatmodositas" class="button red">Adatmódosítás</a>
 <a href="ujcim.php" id="ujcim" class="button red">Új cím</a>
 <a href="logout_session.php" id="kilepes" class="button red2">Kilépés</a>
 </form>';
 			exit();
-			
-
-
-
-
 		}
 	}
 require_once('footer.php');
-?>  
-</body>
-</html>
+?> 

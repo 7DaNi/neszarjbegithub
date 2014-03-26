@@ -16,7 +16,7 @@ body,td,th {
 	width:100%;
 	position:absolute;
 left:300px;
-top:120px;
+top:60px;
 	
 }
 #menu ul li {
@@ -28,11 +28,6 @@ top:120px;
 #menu ul li a {
 	padding:5px 25px 5px 25px;
 	background-color:#FC6;
-	border-radius:15px;
-	-moz-border-radius:15px;
-	-o-border-radius:15px;
-	-webkit-border-radius:15px;
-	-ms-border-radius:15px;
 }
 #menu ul li a:hover {
 	background-color:#FC9;
@@ -51,7 +46,7 @@ h2 {
 }
 #teteje {
     float: left;
-    width: 701px;
+    width: 400px;
     font: normal 12px/45px "Trebuchet MS";
     color: #865020; 
     margin: 0px 0px 0px 71px;
@@ -111,9 +106,6 @@ h2 {
 	font: 14px/100% Arial, Helvetica, sans-serif;
 	padding: .5em 2em .55em;
 	text-shadow: 0 1px 1px rgba(0,0,0,.3);
-	-webkit-border-radius: .5em; 
-	-moz-border-radius: .5em;
-	border-radius: .5em;
 	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 	box-shadow: 0 1px 2px rgba(0,0,0,.2);

@@ -1,19 +1,5 @@
-﻿<!DOCTYPE HTML>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="content-language" content="hu" />
-<meta name="description" content="szakdolgozat">
-<title>Szakdolgozat</title>
+<!DOCTYPE HTML>
 <link href="style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="swfobject.js"></script>
-<script type="text/javascript" src="banner.js"></script>
-<script type="text/javascript" src="ellenor.js"></script>
-</head>
-<body>
-<?php
-session_start();
-require_once('connect.php');
-?>
 <div id="menu">
 
 <ul>   
@@ -38,7 +24,7 @@ echo '<div id="teteje">
 
 }else{
 	echo '<div id="teteje">
-<a href="index.php">Főoldal</a> I
+<a href="index.php">Főoldal</a>I
 <a href="logout_session.php">Kilépés</a>
 </div>';
 }

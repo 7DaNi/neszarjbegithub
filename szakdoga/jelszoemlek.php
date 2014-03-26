@@ -1,16 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Elfelejtett jelszó</title>
-</head>
-
-<body>
 <?php
 require_once('head.php');
 ?>
 <div id="jelszoemlek">
-<h2>Elfelejtett jelszó</h2>
+<h2>Jelszó emlékeztető</h2>
 <form id="jelszoemlek" name="jelszoemlek" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
 <ul>
     <li><label>Kérlek add meg azt az Email címet,</label></li>
@@ -22,14 +14,15 @@ require_once('head.php');
 </ul>   
 </form>
 </div>
-<?php if(isset($_POST["kuldes"]) /*&& isset($_POST["email"])*/)
+<?php
+ if(isset($_POST["kuldes"]) && isset($_POST["email"]))
 {
 	
 	
-	//$email = $_POST["email"];
+	$email = $_POST["email"];
 	
 
-/*	$dbc = mysqli_connect(host,user,pw,db);
+	$dbc = mysqli_connect(host,user,pw,db);
 		mysqli_query($dbc,"SET NAME utf8");
 		$query = "SELECT * FROM userek WHERE email='$email'";
 		$data = mysqli_query($dbc,$query);
@@ -56,8 +49,8 @@ $content = "<html><head><title>$targy</title></head><body>Kedves utf8_encode($ne
   Pizzarendelő szakdoga</body></html>";
   echo $content;
 mail($email, $targy, $content, $header);
-*/
-$url = 'fooldal.php';
+}
+$url = 'index.php';
 	 echo '<META http-equiv=Refresh CONTENT="0; URL='.$url.'">';
 		}
 	     else{
@@ -65,5 +58,3 @@ $url = 'fooldal.php';
 		 }
 require_once('footer.php');
 ?>
-</body>
-</html>

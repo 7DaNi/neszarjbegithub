@@ -1,0 +1,59 @@
+﻿@charset "utf-8";
+/* CSS Document */
+#ablak {
+	display:inline;
+	position:fixed;
+	left:450px;
+	top:170px;
+}
+#belepve {
+	position:fixed;
+	left:90px;
+	top:140px;
+}
+#menupontok {
+	position:relative;
+	padding-bottom:20px;
+}
+#menupontok ul {
+	width:100%;
+	position:absolute;
+left:50px;
+top:230px;
+	
+}
+#menupontok ul li {
+	list-style-type:none;
+	display:block;
+	float:inherit;
+	padding-top:60px;
+}
+#menupontok ul li a {
+	padding:5px 25px 5px 25px;
+	background-color:#FC6;
+	border-radius:15px;
+	-moz-border-radius:15px;
+	-o-border-radius:15px;
+	-webkit-border-radius:15px;
+	-ms-border-radius:15px;
+}
+#menupontok ul li a:hover {
+	background-color:#FC9;
+}
+#menupontok ul li a:active {
+	background-color:#FC9;
+}
+#teteje {
+    float: left;
+    width: 400px;
+    font: normal 12px/45px "Trebuchet MS";
+    color: #865020; 
+    margin: 0px 0px 0px 71px;
+}
+
+#teteje a {
+    font: normal 12px/45px "Trebuchet MS";
+    color: #865020; 
+    text-decoration: none;
+    margin: 0px 9px 0px 9px;
+}

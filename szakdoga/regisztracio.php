@@ -1,15 +1,4 @@
-<!DOCTYPE HTML>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="content-language" content="hu" />
-<meta name="description" content="szakdolgozat">
-<title>Szakdolgozat</title>
-<script language=JavaScript src="ellenor.js"></script>
-</head>
-
-<body>
 <?php
-session_start();
 require_once('head.php');
 ?><div id="reg">
 <h2>Regisztráció</h2>
@@ -50,7 +39,6 @@ require_once('head.php');
 		$lekerdezes = mysqli_query($dbc,$query);
 		while ($adatok = mysqli_fetch_array($lekerdezes)){
 		$userellenor = $adatok['user'];}
-		if($userellenor=''){$userellenor ='a';}
 	if(strtoupper($userellenor)!=strtoupper($user)){
 	$dbc = mysqli_connect(host,user,pw,db) or die('Bukó!');
 	$query = "INSERT INTO userek (nev,user,pw,telszam,email,rang) VALUES ('$nev','$user','$pw1','$telszam','$email','$rang')";
@@ -60,18 +48,15 @@ require_once('head.php');
 	$_SESSION["user"]=$user;
 	$_SESSION["pw"]=$pw1;
 		
-	$url = 'fooldal.php?nev='.$nev.'';
+	$url = 'index.php?nev='.$nev.'';
 	 echo '<META http-equiv=Refresh CONTENT="0; URL='.$url.'">';
 	}
 	else{
 		echo '<script type="text/javascript">'
-   , 'alert("Válasszon másik felhasználó nevet!");'
+   , 'alert("Válasszon másik felhasználónevet!");'
    , '</script>';
-	
 	}}
 	}
 
 require_once('footer.php');
 ?>
-</body>
-</html>
