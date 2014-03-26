@@ -9,12 +9,14 @@ mysqli_query ( $con, "SET NAMES utf8" );
 $query = mysqli_query ( $con, "SELECT * FROM salatak" );
 
 echo "\n<table id = 'salatak'>\n";
+//Ide jöhet még <tbody>
 $i = 1;
 while ( $result = mysqli_fetch_assoc ( $query ) ) {
-	if ($i == 1) {
+	if ($i == 1)
 		echo "<tr>\n";
-	}
+	//Adatmező
 	echo "<td>" . $result ['Nev'] . "</td>\n";
+	
 	if ($i == 3) {
 		echo "</tr>\n";
 		$i = 1;
