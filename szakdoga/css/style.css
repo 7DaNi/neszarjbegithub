@@ -1,0 +1,276 @@
+@charset "utf-8";
+BODY {
+   background: repeat center top #f3cc91;   
+}
+#body_bg {
+    min-width: 1122px;
+    background: no-repeat center top #f3cc91;   
+}
+#header {
+    position: relative;
+    width: 980px;
+    height: 138px;
+    background: url('../kepek/design/Képkivágás32.png') no-repeat center bottom;
+    padding: 0px 71px 0px 71px;
+    margin: 0px auto 0px auto;
+
+}  
+#header_menu {
+    float: left;
+    width: 701px;
+    font: normal 12px/45px "Trebuchet MS";
+    color: #865020; 
+    margin: 0px 0px 0px 71px;
+}
+
+#header_menu A {
+    font: normal 12px/45px "Trebuchet MS";
+    color: #865020; 
+    text-decoration: none;
+    margin: 0px 9px 0px 9px;
+}
+#main_menu {
+    clear: both;
+    margin: 0px 0px 0px 80px;
+}
+
+#main_menu A {
+    display: block;
+    float: left;
+    font: normal 18px "BebasNeueRegular";
+    color: #FFFFFF;
+    padding: 44px 0px 0px 0px; 
+    text-decoration: none;
+}      
+
+#main_menu A:hover {
+    color: #9cd601;
+} 
+
+#main_menu #pizzak {
+    width: 68px;
+    margin: 0px 0px 0px 82px;
+}    
+
+#main_menu #salatak {
+    width: 79px;
+    margin: 0px 0px 0px 47px;
+}   
+
+#main_menu #desszertek {
+    width: 129px;
+    margin: 0px 0px 0px 52px;
+}  
+
+#main_menu #uditok {
+    width: 69px;
+    margin: 0px 0px 0px 37px;
+}  
+
+#main_menu #kiegeszitok {
+    width: 69px;
+    margin: 0px 0px 0px 50px;
+}  
+
+body,td,th {
+	font-family:Georgia,Serif;
+	font-size:16px;
+	color:#000;
+}
+#teteje {
+    float: left;
+    width: 400px;
+    font: normal 12px/45px "Trebuchet MS";
+    color: #865020; 
+    margin: 0px 0px 0px 71px;
+}
+
+#teteje a {
+    font: normal 12px/45px "Trebuchet MS";
+    color: #865020; 
+    text-decoration: none;
+    margin: 0px 9px 0px 9px;
+}
+#menu {
+	position:relative;
+	padding-bottom:20px;
+}
+#menu ul {
+	width:100%;
+	position:absolute;
+left:300px;
+top:60px;
+	
+}
+#menu ul li {
+	list-style-type:none;
+	display:block;
+	float:left;
+	padding-right:10px;
+}
+#menu ul li a {
+	padding:5px 25px 5px 25px;
+	background-color:#FC6;
+}
+#menu ul li a:hover {
+	background-color:#FC9;
+}
+#menu ul li a:active {
+	background-color:#FC9;
+}
+td,th {
+	text-align:center;
+}
+h2 {
+	font-size:20px;
+	font-weight:normal;
+	font-variant:small-caps;
+	padding-left:40px;
+}
+
+#login{ position:absolute;
+	left:950px;
+	top:300px;
+	}
+#belepes{
+	position:absolute;
+	left:0px;
+	top:195px;
+	}			
+#regisztracio{
+	position:absolute;
+	left:210px;
+	top:240px;
+	}
+#jelszoemlek{
+	color:#090;
+	position:fixed;
+	left:950px;
+	top:540px;
+	}
+#adat{ position:absolute;
+	left:950px;
+	top:300px;
+	}
+#ujcim{
+	position:fixed;
+	left:1160px;
+	top:490px;
+	}
+#adatmodositas{
+	position:fixed;
+	left:950px;
+	top:540px;
+	}
+#kilepes{
+	position:absolute;
+	left:210px;
+	top:60px;
+	}							
+.button {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 14px/100% Arial, Helvetica, sans-serif;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.button:hover {
+	text-decoration: none;
+}
+.button:active {
+	position: relative;
+	top: 1px;
+}
+.red {
+color: #faddde;
+border: solid 1px #980c10;
+background: #d81b21;
+background: -webkit-gradient(linear, left top, left bottom, from(#ed1c24), to(#aa1317));
+background: -moz-linear-gradient(top, #ed1c24, #aa1317);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed1c24', endColorstr='#aa1317');
+}
+.red:hover {
+background: #b61318;
+background: -webkit-gradient(linear, left top, left bottom, from(#c9151b), to(#a11115));
+background: -moz-linear-gradient(top, #c9151b, #a11115);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9151b', endColorstr='#a11115');
+}
+.red:active {
+color: #de898c;
+background: -webkit-gradient(linear, left top, left bottom, from(#aa1317), to(#ed1c24));
+background: -moz-linear-gradient(top, #aa1317, #ed1c24);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aa1317', endColorstr='#ed1c24');
+}
+.green {
+color: #e8f0de;
+border: solid 1px #538312;
+background: #64991e;
+background: -webkit-gradient(linear, left top, left bottom, from(#7db72f), to(#4e7d0e));
+background: -moz-linear-gradient(top, #7db72f, #4e7d0e);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7db72f', endColorstr='#4e7d0e');
+}
+.green:hover {
+background: #538018;
+background: -webkit-gradient(linear, left top, left bottom, from(#6b9d28), to(#436b0c));
+background: -moz-linear-gradient(top, #6b9d28, #436b0c);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6b9d28', endColorstr='#436b0c');
+}
+.green:active {
+color: #a9c08c;
+background: -webkit-gradient(linear, left top, left bottom, from(#4e7d0e), to(#7db72f));
+background: -moz-linear-gradient(top, #4e7d0e, #7db72f);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4e7d0e', endColorstr='#7db72f');
+}
+#reg h2{
+	font-size:20px;
+	font-weight:normal;
+	font-variant:small-caps;
+	padding-left:40px;
+	position:fixed;
+	left:40%;
+	top:220px;
+}
+#reg ul{
+	position:fixed;
+left:30%;
+top:320px;
+}
+#reg ul li{
+	font-size:14px;
+	font-variant:normal;
+	list-style-type:none;
+	padding-right:10px;
+}
+#jelszoemlek h2{
+	font-size:20px;
+	font-weight:normal;
+	font-variant:small-caps;
+	padding-left:40px;
+	position:fixed;
+	left:39%;
+	top:220px;
+}
+#jelszoemlek ul{
+	position:fixed;
+left:37%;
+top:320px;
+}
+#jelszoemlek ul li{
+	font-size:14px;
+	font-variant:normal;
+	list-style-type:none;
+	padding-right:10px;
+}
+#swf_content {
+position:fixed;
+left:310px;
+top:250px; 
+width:400px;
+height:300px;
+}

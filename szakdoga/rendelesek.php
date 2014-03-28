@@ -18,27 +18,30 @@ echo '
 <tr bgcolor="#E0FFFF">
 	<th>Rendelésszám</th>
 	<th>Név</th>
+	<th>Megjegyzés</th>
 	<th>Dátum</th>
 	<th>Állapot</th>
     <th>Művelet</th>
 </tr>';
 	$dbc = mysqli_connect(host,user,pw,db) or die('Nem jött be!');
 	mysqli_query($dbc,"SET NAMES utf8");
-	$query = "SELECT * FROM rendelesek WHERE rendelesid LIKE '%" . $feltetel . "%' OR userid LIKE '%" . $feltetel . "%' OR nev LIKE  '%" . $feltetel . "%'OR datum LIKE  '%" . $feltetel . "%'OR allapot LIKE  '%" . $feltetel . "%'";
+	$query = "SELECT * FROM rendelesek WHERE rendelesid LIKE '%" . $feltetel . "%' OR userid LIKE '%" . $feltetel . "%' OR nev LIKE  '%" . $feltetel . "%' OR megjegyzes LIKE  '%" . $feltetel . "%' OR datum LIKE  '%" . $feltetel . "%' OR allapot LIKE  '%" . $feltetel . "%'";
 	$lekerdezes = mysqli_query($dbc,$query);
 	while ($adatok = mysqli_fetch_array($lekerdezes)){
 		$rendelesid = $adatok['rendelesid'];
 		$userid = $adatok['userid'];
 		$nev = $adatok['nev'];
+		$megjegyzes = $adatok['megjegyzes'];
 		$datum = $adatok['datum'];
 		$allapot = $adatok['allapot'];
 echo '
 <tr>
 	<td>' . $rendelesid . '</td>
 	<td>' . $nev . '</td>
+	<td>' . $megjegyzes . '</td>
 	<td>' . $datum . '</td>
     <td>' . $allapot . '</td>
-	<td><a href="rendeleslista.php?rendelesid=' . $rendelesid . '">Rendelés lista</a> | <a href="rendelestorles.php?rendelesid=' . $rendelesid . '&nev=' . $nev . '">Törlés</a> | <a href="rendelesfolyamatban.php?rendelesid=' . $rendelesid . '">Folyamatban</a> | <a href="rendeleskesz.php?rendelesid=' . $rendelesid . '">Kész</a></td>
+	<td><a href="rendeleslista.php?rendelesid=' . $rendelesid . '">Rendelés lista</a> | <a href="rendelestorles.php?rendelesid=' . $rendelesid . '&userid=' . $userid . '&nev=' . $nev . '&datum=' . $datum . '&allapot=' . $allapot . '">Törlés</a> | <a href="rendelesfolyamatban.php?rendelesid=' . $rendelesid . '">Folyamatban</a> | <a href="rendeleskesz.php?rendelesid=' . $rendelesid . '&userid=' . $userid . '&nev=' . $nev . '&datum=' . $datum . '&allapot=' . $allapot . '">Kész</a></td>
 
 </tr>';
 	}
@@ -50,6 +53,7 @@ else {
 <tr bgcolor="#E0FFFF">
 	<th>Rendelésszám</th>
 	<th>Név</th>
+	<th>Megjegyzés</th>
 	<th>Dátum</th>
 	<th>Állapot</th>
     <th>Művelet</th>
@@ -65,6 +69,7 @@ else {
 		$rendelesid = $adatok['rendelesid'];
 		$userid = $adatok['userid'];
 		$nev = $adatok['nev'];
+		$megjegyzes = $adatok['megjegyzes'];
 		$datum = $adatok['datum'];
 		$allapot = $adatok['allapot'];
 	
@@ -72,9 +77,10 @@ echo '
 <tr>
 	<td>' . $rendelesid . '</td>
 	<td>' . $nev . '</td>
+	<td>' . $megjegyzes . '</td>
 	<td>' . $datum . '</td>
     <td>' . $allapot . '</td>
-	<td><a href="rendeleslista.php?rendelesid=' . $rendelesid . '">Rendelés lista</a> | <a href="rendelestorles.php?rendelesid=' . $rendelesid . '&nev=' . $nev . '">Törlés</a> | <a href="rendelesfolyamatban.php?rendelesid=' . $rendelesid . '">Folyamatban</a> | <a href="rendeleskesz.php?rendelesid=' . $rendelesid . '">Kész</a></td>
+	<td><a href="rendelescim.php?userid=' . $userid . '">Cím</a> | <a href="rendeleslista.php?rendelesid=' . $rendelesid . '">Rendelés lista</a> | <a href="rendelestorles.php?rendelesid=' . $rendelesid . '&userid=' . $userid . '&nev=' . $nev . '&datum=' . $datum . '&allapot=' . $allapot . '">Törlés</a> | <a href="rendelesfolyamatban.php?rendelesid=' . $rendelesid . '">Folyamatban</a> | <a href="rendeleskesz.php?rendelesid=' . $rendelesid . '&userid=' . $userid . '&nev=' . $nev . '&datum=' . $datum . '&allapot=' . $allapot . '">Kész</a></td>
 </tr>';
 	}
 }

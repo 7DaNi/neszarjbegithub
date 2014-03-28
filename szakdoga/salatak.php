@@ -1,26 +1,55 @@
 <?php
-require ("head.php");
-$con = mysqli_connect ( host, user, pw, db );
-if (mysqli_connect_errno ())
-	echo mysqli_connect_error ();
+require_once('head.php');
+?>
+<?php
+$dbc = mysqli_connect(host,user,pw,db) or die('Nem sikerült!');
+mysqli_query ( $dbc, "SET NAMES utf8" );
+$query = "SELECT * FROM termekek WHERE kategoria='pizzák'";
+$lekerdezes = mysqli_query($dbc,$query);
+$sorokszama = mysqli_num_rows($lekerdezes);
+$termekszam=$sorokszama;
 
-$table = mysqli_query ( $con, "CREATE TABLE IF NOT EXISTS salatak(Nev CHAR(30), Ar INT, Leiras CHAR(255))" );
-mysqli_query ( $con, "SET NAMES utf8" );
-$query = mysqli_query ( $con, "SELECT * FROM salatak" );
-
-echo "\n<table id = 'salatak_table'>\n";
+		
+$dbc = mysqli_connect(host,user,pw,db) or die('Nem sikerült!');
+mysqli_query ( $dbc, "SET NAMES utf8" );
+$query = "SELECT * FROM termekek WHERE kategoria='pizzák'";
+$lekerdezes = mysqli_query($dbc,$query);
+echo '<table class="product_list" id = "pizzak_list_1"><tbody><tr>';
 $i = 1;
-while ( $result = mysqli_fetch_assoc ( $query ) ) {
-	if ($i == 1)
-		echo "<tr>\n";
-		// Adatmező
-	echo "<td id ='salatak_td'>" . $result ['Nev'] . "</td>\n";
+
+while ( $result = mysqli_fetch_assoc ( $lekerdezes ) ) {
+
 	
-	if ($i == 3) {
-		echo "</tr>\n";
+	for($k=2;$k<$termekszam;$k++){
+		if ($i == 1 || $i == 2 || $i == 3){
+	echo '
+	 <td style="background-image: url(&#39;' . $result["kep"] . '&#39;)" class="classic_pizza">
+	  	 <div class="product_info_panel">
+	  	 		<h3>
+				' . $result["etelnev"] . '
+				</h3>
+	     		<p>
+				' . $result["leiras"] . '
+				</p>
+	  			<div class="pizza_size_button">
+	   			' . $result["leiras"] . ' CM <b>' . $result["etelnev"] . ' Ft</b>
+		 		</div>
+		    	<div class="pizza_size_button">
+       			' . $result["leiras"] . ' CM <b>' . $result["etelnev"] . ' Ft</b>
+       			</div>
+	     </div>
+    </td>';
+	  $k++;}
+	  if ($i == 4) {
+		echo '</tr><tr>';
 		$i = 1;
-	} else
-		$i ++;
+	} else{
+		$i ++;}
+	   
+	  }	
 }
-echo "</table>\n";
+echo '<td></td><td></td>                  </tr></tbody></table>     ';
+?>
+<?php
+require_once('footer.php');
 ?>

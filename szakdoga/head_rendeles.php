@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE HTML>
-<link href="style_vedett.css" rel="stylesheet" type="text/css" />
+<link href="css/style_vedett.css" rel="stylesheet" type="text/css" />
 <?php
 require_once('connect.php');
 session_start();
@@ -8,11 +8,11 @@ if(isset( $_SESSION["rang"] ) && $_SESSION["rang"] == 2)
 <label>Belépve: <span style="color:#900;"> ' . $_SESSION["user"] . '</label><br /><br />
  		<label>Ön a rendeléskezelő felületen tartózkodik.</label><br /><br />
 		</div>
-		<div id="menupontok">
+		<div id="menupontok_left">
 <ul>
 <li><a href="rendelesek.php">RENDELÉSEK</a></li>
 <li><a href="rendelesek_teljesitett.php">TELJESÍTETT RENDELÉSEK</a></li>
-<li><a href="rendelesek_torolt.php">TÖRÖLT/HIBÁS RENDELÉSEK</a></li>
+<li><a href="rendelesek_hibas.php">TÖRÖLT/HIBÁS RENDELÉSEK</a></li>
 <ul>
 </div>
 <div id="teteje">
